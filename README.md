@@ -1,4 +1,4 @@
-# Minimal Example: React + Webpack + ES6
+# Minimal React + Redux + Webpack + ES6
 
 Run `npm install` to install all dependencies.
 

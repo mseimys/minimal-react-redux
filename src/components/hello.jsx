@@ -6,5 +6,5 @@ export class Hello extends React.PureComponent {
     }
 }
 
-export const Hey = (props) =>
-    <div>Hey {props.name}!</div>
+export const Hey = ({ name }) =>
+    <div>Hey {name}!</div>
