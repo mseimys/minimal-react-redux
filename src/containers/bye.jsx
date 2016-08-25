@@ -12,18 +12,18 @@ class Bye extends React.PureComponent {
 const mapStateToProps = (state) => {
     return {
         counter: state.counter
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onIncrementClick: (amount) => {
             dispatch(increment(amount))
         }
-    }
-}
+    };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Bye)
+)(Bye);

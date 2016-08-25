@@ -1,11 +1,11 @@
-import * as React from "react"
-import * as ReactDOM from "react-dom"
-import {Provider} from "react-redux"
-import {createStore} from "redux"
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
 
-import {Hello, Hey} from "./components/hello"
-import Bye from "./containers/bye"
-import rootReducer from "./reducers"
+import {Hello, Hey} from "./components/hello";
+import Bye from "./containers/bye";
+import rootReducer from "./reducers";
 
 let store = createStore(rootReducer);
 
@@ -21,4 +21,4 @@ ReactDOM.render(
         </div>
     </Provider>,
     document.getElementById("app")
-)
+);

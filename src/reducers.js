@@ -1,8 +1,8 @@
-const INCREMENT = "INCREMENT";
+import { combineReducers } from "redux";
 
-const initialState = {
-    counter: 1
-};
+/* Counter reducer */
+const initialCounter = 1;
+const INCREMENT = "INCREMENT";
 
 export function increment(by) {
     return {
@@ -11,13 +11,16 @@ export function increment(by) {
     };
 }
 
-export default function reducers(state = initialState, action) {
+function counter(state = initialCounter, action) {
     switch (action.type) {
     case INCREMENT:
-        return Object.assign({}, state, {
-            counter: state.counter + action.by
-        });
+        return state + action.by;
     default:
         return state;
     }
 }
+
+/* Root reducer */
+export default combineReducers({
+    counter
+});
