@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p --colors",
     "lint": "eslint ./src",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --inline",
     "watch": "webpack --colors --watch"
   },
   "author": "Matas Seimys <matas.seimys@gmail.com>",
