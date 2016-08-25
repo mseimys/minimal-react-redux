@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { createStore, combineReducers } from "redux";
 
 /* Counter reducer */
 const initialCounter = 1;
@@ -20,7 +20,10 @@ function counter(state = initialCounter, action) {
     }
 }
 
-/* Root reducer */
-export default combineReducers({
+/* Store */
+
+const rootReducer = combineReducers({
     counter
-});
+})
+
+export default createStore(rootReducer);

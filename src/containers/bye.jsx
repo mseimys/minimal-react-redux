@@ -1,29 +1,28 @@
 import * as React from "react";
 import {connect} from "react-redux";
-import {increment} from "../reducers";
+import {increment} from "../store";
 
-class Bye extends React.PureComponent {
+class Bye extends React.Component {
     render() {
         const {counter, onIncrementClick} = this.props;
-        return <div>Bye x <b>{counter}</b>! <button onClick={() => onIncrementClick(1)}>Bye!</button></div>;
+        return <div>
+            Bye x <b>{counter}</b>!
+            <button onClick={() => onIncrementClick(1)}>Bye +1!</button>
+        </div>;
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        counter: state.counter
-    };
-};
+const mapStateToProps = (state) => ({
+    counter: state.counter
+});
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onIncrementClick: (amount) => {
-            dispatch(increment(amount))
-        }
-    };
-};
+const mapDispatchToProps = (dispatch) => ({
+    onIncrementClick: (amount) => {
+        dispatch(increment(amount))
+    }
+});
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Bye);
