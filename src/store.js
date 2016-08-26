@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 
 /* Counter reducer */
 const initialCounter = 1;
-const INCREMENT = "INCREMENT";
+const INCREMENT = "my-module/INCREMENT";
 
 export function increment(by) {
     return {
@@ -21,9 +21,8 @@ function counter(state = initialCounter, action) {
 }
 
 /* Store */
-
 const rootReducer = combineReducers({
-    counter
-})
+    counter: counter
+});
 
 export default createStore(rootReducer);

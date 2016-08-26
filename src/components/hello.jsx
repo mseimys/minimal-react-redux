@@ -9,14 +9,16 @@ export function Hey({ name }) {
 export class Hello extends React.Component {
     constructor() {
         super();
-        this.state = { counter: 0 };
+        this.state = { counter: 10 };
     }
-    handleClick() {
-        this.setState({counter: this.state.counter + 1});
+    handleClick(amount) {
+        this.setState({counter: this.state.counter + amount});
     }
     render() {
-        return <h3>{this.props.name} counter:
-        {this.state.counter} - <button onClick={() => this.handleClick()}>+1</button>
-        </h3>;
+        return <div><h3>{this.props.name} counter: {this.state.counter}</h3>
+            <button onClick={() => this.handleClick(1)}>+1</button>
+            <button onClick={() => this.handleClick(10)}>+10</button>
+            <small>By clicking on these buttons you change internal state of React Component: changed state makes it to rerender itself</small>
+        </div>;
     }
 }
