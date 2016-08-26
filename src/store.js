@@ -4,17 +4,17 @@ import { createStore, combineReducers } from "redux";
 const initialCounter = 1;
 const INCREMENT = "my-module/INCREMENT";
 
-export function increment(by) {
+export function increment(amount) {
     return {
         type: INCREMENT,
-        by
+        amount
     };
 }
 
 function counter(state = initialCounter, action) {
     switch (action.type) {
     case INCREMENT:
-        return state + action.by;
+        return state + action.amount;
     default:
         return state;
     }
