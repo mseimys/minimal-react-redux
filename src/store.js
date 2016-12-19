@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
 
-/* Counter reducer */
 const initialCounter = 1;
-const INCREMENT = "my-module/INCREMENT";
+const INCREMENT = "minimal-react-redux/counter/INCREMENT";
 
+/* increment() is counter reducer's "action creator", it can be dispatched */
 export function increment(amount) {
     return {
         type: INCREMENT,
@@ -11,6 +11,7 @@ export function increment(amount) {
     };
 }
 
+/* Counter reducer - processes actions and modifies state */
 function counter(state = initialCounter, action) {
     switch (action.type) {
     case INCREMENT:
@@ -20,9 +21,10 @@ function counter(state = initialCounter, action) {
     }
 }
 
-/* Store */
+/* We combine reducers, so actions would flow through all of them */
 const rootReducer = combineReducers({
-    counter: counter
+    counter
 });
 
+/* Creation of application state store */
 export default createStore(rootReducer);
