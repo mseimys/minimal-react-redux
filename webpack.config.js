@@ -5,16 +5,16 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        extensions: ["", ".js", ".jsx"]
+        extensions: [".js", ".jsx"]
     },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader: "babel-loader",
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ["es2015", "react"]
                 }
             }
         ]
